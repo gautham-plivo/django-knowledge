@@ -1,19 +1,18 @@
 {% load i18n %}
-{% load url from future %}
 
 {% if my_questions %}
 
-  <h4>{% trans "My Questions" %}</h4>
-  <hr />
+<h4>{% trans "My Questions" %}</h4>
+<hr />
 
-  <ul>
-    {% for question in my_questions %}
-      <li><a href="{{ question.get_absolute_url }}">{{ question.title }}</a></li>
-    {% endfor %}
-  </ul>
+<ul>
+  {% for question in my_questions %}
+  <li><a href="{{ question.get_absolute_url }}">{{ question.title }}</a></li>
+  {% endfor %}
+</ul>
 
-  <br />
-    
+<br />
+
 {% endif %}
 
 <h4>{% trans "Categories" %}</h4>
@@ -21,7 +20,7 @@
 
 <ul>
   {% for category in categories %}
-    <li><a href="{% url "knowledge_list_category" category.slug %}">{{ category.title }}</a></li>
+  <li><a href="{% url "knowledge_list_category" category.slug %}">{{ category.title }}</a></li>
   {% endfor %}
 </ul>
 
