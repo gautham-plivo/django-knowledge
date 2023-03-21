@@ -26,7 +26,6 @@ def get_my_questions(request):
 
 
 def knowledge_index(request, template="django_knowledge/index.html"):
-    print("knowledge_index")
 
     if settings.LOGIN_REQUIRED and not request.user.is_authenticated:
         return HttpResponseRedirect(settings.LOGIN_URL + "?next=%s" % request.path)
